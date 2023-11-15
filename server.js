@@ -23,7 +23,7 @@ app.use(
     xFrameOptions: { action: "deny" },
     xDnsPrefetchControl: { allow: false },
     referrerPolicy: {
-      policy: ["origin", "unsafe-url"],
+      policy: ["same-origin"],
     },
   })
 );
