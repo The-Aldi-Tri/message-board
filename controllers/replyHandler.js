@@ -50,11 +50,8 @@ exports.replyGet = async (req, res) => {
         };
       });
       if (replyCount > 1) {
-        //Sort the replies
         newReplies.sort(function (a, b) {
-          let keyA = new Date(a.created_on);
-          let keyB = new Date(b.created_on);
-          keyA > keyB ? -1 : keyA < keyB ? 1 : 0;
+          return new Date(b.created_on) - new Date(a.created_on);
         });
       }
     }
